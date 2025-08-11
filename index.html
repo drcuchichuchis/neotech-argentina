@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo-tech Argentina - Soluciones IT & Call Center</title>
+    <meta name="description" content="Servicios profesionales de IT, Call Center, desarrollo web, soporte técnico y soluciones empresariales. Atención 24/7 en Argentina.">
+    <meta name="keywords" content="call center, telefonía IP, desarrollo web, python, react, node, mysql, linux, redes, soporte técnico, Argentina">
+    <meta name="author" content="Neo-tech Argentina">
+    <meta property="og:title" content="Neo-tech Argentina - Soluciones IT & Call Center">
+    <meta property="og:description" content="Transformamos tu empresa con tecnología de vanguardia">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E🚀%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-bento.css">
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="gradient-bg"></div>
+    <div class="noise-bg"></div>
+    
+    <!-- Floating Header -->
+    <header class="floating-header">
+        <div class="header-glass">
+            <div class="logo-brand">
+                <span class="logo-icon">🚀</span>
+                <span class="logo-text">Neo-tech Argentina</span>
+            </div>
+            <nav class="mini-nav">
+                <a href="#inicio" class="nav-link active">Inicio</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#planes" class="nav-link">Planes</a>
+                <a href="#nosotros" class="nav-link">Nosotros</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Bento Grid Container -->
+    <main class="bento-container">
+        
+        <!-- Hero Card -->
+        <section id="inicio" class="bento-card hero-card">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Transformamos</span> tu empresa
+                    con <span class="gradient-text">tecnología</span> de vanguardia
+                </h1>
+                <p class="hero-description">
+                    Soluciones integrales de IT, Call Center y Desarrollo Web para impulsar tu negocio al siguiente nivel
+                </p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="NeoTech.showContactForm()">
+                        Comenzar Ahora
+                        <span class="btn-glow"></span>
+                    </button>
+                    <button class="btn-secondary" onclick="document.querySelector('#servicios').scrollIntoView({behavior: 'smooth'})">
+                        Ver Servicios
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="orbit-container">
+                    <div class="planet planet-1"></div>
+                    <div class="planet planet-2"></div>
+                    <div class="planet planet-3"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stats Cards -->
+        <div class="bento-card stat-card">
+            <div class="stat-icon">🚀</div>
+            <div class="stat-number" data-target="500" data-suffix="+">0</div>
+            <div class="stat-label">Clientes Activos</div>
+        </div>
+        
+        <div class="bento-card stat-card">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-number" data-target="24" data-suffix="/7">0</div>
+            <div class="stat-label">Soporte Continuo</div>
+        </div>
+        
+        <div class="bento-card stat-card">
+            <div class="stat-icon">💎</div>
+            <div class="stat-number" data-target="99" data-suffix="%">0</div>
+            <div class="stat-label">Satisfacción</div>
+        </div>
+        
+        <!-- Services Section -->
+        <section id="servicios" class="bento-card service-card">
+            <div class="service-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/>
+                    <path d="M16 2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8z"/>
+                </svg>
+            </div>
+            <h3>Call Center en la Nube</h3>
+            <p>Contact Center profesional con telefonía ilimitada y CRM integrado</p>
+            <div class="service-pricing">
+                <span class="price-tag">Desde $180.000/mes</span>
+            </div>
+            <ul class="service-features">
+                <li>✓ Telefonía ilimitada Argentina</li>
+                <li>✓ CRM integrado en la nube</li>
+                <li>✓ Módulo Contact Center</li>
+                <li>✓ Grabación automática</li>
+                <li>✓ Reportes y estadísticas</li>
+            </ul>
+            <button class="service-btn" onclick="NeoTech.sendWhatsApp('Me interesa el Call Center en la nube')">
+                Solicitar demo →
+            </button>
+        </section>
+        
+        <section class="bento-card service-card">
+            <div class="service-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                    <line x1="8" y1="21" x2="16" y2="21"/>
+                    <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+            </div>
+            <h3>Desarrollo Web</h3>
+            <p>Sitios web corporativos, landing pages en HTML/PHP y aplicaciones web personalizadas</p>
+            <div class="service-pricing">
+                <span class="price-tag">Desde $150.000</span>
+            </div>
+            <ul class="service-features">
+                <li>✓ Landing pages HTML/PHP: $150.000-$300.000</li>
+                <li>✓ Sitios corporativos: $400.000-$800.000</li>
+                <li>✓ Aplicaciones web: $600.000-$1.5M</li>
+                <li>✓ Hosting y dominio incluido</li>
+            </ul>
+            <button class="service-btn" onclick="NeoTech.sendWhatsApp('Me interesa el servicio de Desarrollo Web')">
+                Ver portfolio →
+            </button>
+        </section>
+        
+        <section class="bento-card service-card">
+            <div class="service-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                    <path d="M9 12l2 2 4-4"/>
+                </svg>
+            </div>
+            <h3>Soporte Técnico IT</h3>
+            <p>Para PyMEs, comercios y usuarios particulares - Presencial y Remoto</p>
+            <div class="service-pricing">
+                <span class="price-tag">Desde $35.000/hora</span>
+            </div>
+            <ul class="service-features">
+                <li>✓ Remoto: $35.000-$60.000/hora</li>
+                <li>✓ Domicilio: $60.000-$90.000/hora</li>
+                <li>✓ Visita técnica: $80.000-$150.000</li>
+                <li>✓ Abono PyMEs: $350.000-$900.000/mes</li>
+                <li>✓ Soporte WhatsApp incluido</li>
+            </ul>
+            <button class="service-btn" onclick="NeoTech.sendWhatsApp('Necesito soporte técnico')">
+                Solicitar soporte →
+            </button>
+        </section>
+        
+        <!-- Feature Highlight -->
+        <section id="nosotros" class="bento-card feature-card">
+            <h2 class="feature-title">¿Por qué elegir Neo-tech Argentina?</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h4>Enfoque Personalizado</h4>
+                    <p>Soluciones adaptadas a tu negocio</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚙️</div>
+                    <h4>Tecnología Avanzada</h4>
+                    <p>Herramientas de última generación</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">👥</div>
+                    <h4>Equipo Experto</h4>
+                    <p>Profesionales certificados</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📈</div>
+                    <h4>Resultados Medibles</h4>
+                    <p>KPIs y métricas en tiempo real</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Mini Services -->
+        <div class="bento-card mini-service">
+            <div class="mini-icon">🔧</div>
+            <h4>Armado de PC Completo</h4>
+            <p>Ensamblaje profesional, instalación de SO, drivers y configuración inicial optimizada</p>
+            <span class="mini-price">$70.000 - $120.000</span>
+        </div>
+        
+        <div class="bento-card mini-service">
+            <div class="mini-icon">☁️</div>
+            <h4>Soporte Remoto</h4>
+            <p>TeamViewer/AnyDesk - Asistencia online</p>
+            <span class="mini-price">$35.000 - $60.000/hora</span>
+        </div>
+        
+        <div class="bento-card mini-service">
+            <div class="mini-icon">📊</div>
+            <h4>Paquete 10 Horas</h4>
+            <p>Bolsa de horas soporte técnico</p>
+            <span class="mini-price">$300.000 - $500.000</span>
+        </div>
+        
+        <!-- Additional Services Row -->
+        <div class="bento-card mini-service">
+            <div class="mini-icon">🏠</div>
+            <h4>Soporte a Domicilio</h4>
+            <p>Visita técnica para usuarios y PyMEs</p>
+            <span class="mini-price">$80.000 - $150.000/visita</span>
+        </div>
+        
+        <div class="bento-card mini-service">
+            <div class="mini-icon">🔧</div>
+            <h4>Reparación de PCs</h4>
+            <p>Limpieza de virus y optimización</p>
+            <span class="mini-price">$40.000 - $80.000</span>
+        </div>
+        
+        <div class="bento-card mini-service">
+            <div class="mini-icon">💾</div>
+            <h4>Recuperación de Datos</h4>
+            <p>Rescate de archivos perdidos</p>
+            <span class="mini-price">$150.000 - $500.000</span>
+        </div>
+        
+        <!-- More Services -->
+        <div class="bento-card mini-service">
+            <div class="mini-icon">💻</div>
+            <h4>Instalación Windows/Office</h4>
+            <p>Sistema operativo y paquete Office</p>
+            <span class="mini-price">$50.000 - $100.000</span>
+        </div>
+        
+        <div class="bento-card mini-service">
+            <div class="mini-icon">🔌</div>
+            <h4>Cableado de Redes</h4>
+            <p>$18.000 = 1 boca en la pared + cable hasta el router. Configuración router/switch: $60.000 adicional</p>
+            <span class="mini-price">Desde $18.000</span>
+        </div>
+        
+        <div class="bento-card mini-service">
+            <div class="mini-icon">📅</div>
+            <h4>Abono Mensual PyMEs</h4>
+            <p>Mantenimiento preventivo incluido</p>
+            <span class="mini-price">$350.000 - $900.000/mes</span>
+        </div>
+        
+        <!-- Pricing Section -->
+        <section id="planes" class="bento-card pricing-card">
+            <h2 class="section-title">Planes de Call Center - Precios Mensuales</h2>
+            <div class="pricing-grid">
+                <div class="price-box">
+                    <div class="price-header">
+                        <h3>Plan Básico</h3>
+                        <div class="price-amount">
+                            <span class="currency">$</span>
+                            <span class="number">180.000</span>
+                            <span class="period">/mes</span>
+                        </div>
+                    </div>
+                    <ul class="price-features">
+                        <li>✓ 1 agente dedicado (4hs)</li>
+                        <li>✓ Telefonía ilimitada Argentina</li>
+                        <li>✓ CRM en la nube incluido</li>
+                        <li>✓ Módulo Contact Center</li>
+                        <li>✓ Grabación automática</li>
+                        <li>✓ Reportes en tiempo real</li>
+                    </ul>
+                    <button class="price-btn featured">Comenzar</button>
+                </div>
+                
+                <div class="price-box featured">
+                    <span class="badge">MÁS POPULAR</span>
+                    <div class="price-header">
+                        <h3>Plan Profesional</h3>
+                        <div class="price-amount">
+                            <span class="currency">$</span>
+                            <span class="number">450.000</span>
+                            <span class="period">/mes</span>
+                        </div>
+                    </div>
+                    <ul class="price-features">
+                        <li>✓ 2-3 agentes dedicados (8hs)</li>
+                        <li>✓ Telefonía ilimitada Argentina</li>
+                        <li>✓ CRM en la nube incluido</li>
+                        <li>✓ Módulo Contact Center</li>
+                        <li>✓ Grabación automática</li>
+                        <li>✓ Reportes en tiempo real</li>
+                        <li>✓ Soporte 24/7</li>
+                    </ul>
+                    <button class="price-btn featured">Comenzar</button>
+                </div>
+                
+                <div class="price-box">
+                    <div class="price-header">
+                        <h3>Plan Enterprise</h3>
+                        <h3>Call Center Enterprise</h3>
+                        <div class="price-amount">
+                            <span class="text">$900.000 - $1.5M</span>
+                        </div>
+                    </div>
+                    <ul class="price-features">
+                        <li>✓ 5+ agentes dedicados</li>
+                        <li>✓ Llamadas ilimitadas</li>
+                        <li>✓ Infraestructura dedicada</li>
+                        <li>✓ Integración con sistemas</li>
+                        <li>✓ SLA 99.9% garantizado</li>
+                        <li>✓ Gerente de cuenta dedicado</li>
+                    </ul>
+                    <button class="price-btn">Contactar</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Form -->
+        <section id="contacto" class="bento-card contact-card">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Hablemos de tu proyecto</h2>
+                    <p>Estamos listos para transformar tu empresa con soluciones tecnológicas innovadoras</p>
+                    
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <h4>WhatsApp</h4>
+                                <a href="https://wa.me/541169276629">+54 11 6927-6629</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:info@neotech.ar">info@neotech.ar</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <span>Buenos Aires, Argentina</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder=" " required>
+                            <label>Nombre completo</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder=" " required>
+                            <label>Email</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder=" ">
+                            <label>Teléfono</label>
+                        </div>
+                        <div class="form-group">
+                            <select name="service" required>
+                                <option value="">Seleccionar servicio</option>
+                                <option value="call-center">Call Center</option>
+                                <option value="desarrollo">Desarrollo Web</option>
+                                <option value="soporte">Soporte IT</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea name="message" rows="4" placeholder=" " required></textarea>
+                        <label>Mensaje</label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        Enviar Mensaje
+                        <span class="submit-glow"></span>
+                    </button>
+                    
+                    <div class="form-message"></div>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Testimonial -->
+        <div class="bento-card testimonial-card">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text">
+                Neo-tech transformó completamente nuestra operación. El soporte 24/7 y la calidad del servicio son excepcionales.
+            </p>
+            <div class="testimonial-author">
+                <div class="author-avatar">JM</div>
+                <div>
+                    <h4>Juan Martínez</h4>
+                    <span>CEO, TechCorp</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA Card -->
+        <div class="bento-card cta-card">
+            <h3>¿Listo para empezar?</h3>
+            <p>Obtén una consultoría gratuita y descubre cómo podemos ayudarte</p>
+            <button class="cta-btn-large" onclick="NeoTech.sendWhatsApp('Quiero una consultoría gratuita')">
+                Consulta Gratis
+                <span class="arrow">→</span>
+            </button>
+        </div>
+        
+    </main>
+    
+    <!-- Footer -->
+    <footer class="modern-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Neo-tech Argentina</h3>
+                <p>Transformando empresas con tecnología</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#planes">Planes</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            
+            <div class="footer-social">
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="Instagram">ig</a>
+                <a href="#" aria-label="Facebook">fb</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Neo-tech Argentina. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- WhatsApp Bubble -->
+    <a href="https://wa.me/541169276629?text=Hola%20Neo-tech!%20Necesito%20información%20sobre%20sus%20servicios" 
+       class="whatsapp-bubble" 
+       target="_blank"
+       aria-label="Contactar por WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 1.74.44 3.37 1.22 4.8L2 22l5.34-1.4A9.91 9.91 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.57 0-3.04-.46-4.28-1.25l-.31-.19-3.21.84.86-3.13-.2-.32A7.9 7.9 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/>
+        </svg>
+        <span class="bubble-tooltip">¡Hablemos por WhatsApp!</span>
+    </a>
+    
+    <!-- Scripts -->
+    <script src="script-bento.js"></script>
+</body>
+</html>
