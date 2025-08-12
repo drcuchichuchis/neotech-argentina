@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://drcuchichuchis.github.io/neotech-argentina/sitemap.xml
+
+# Directivas específicas para mejor SEO
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Optimización para Argentina
+User-agent: *
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.svg$
+
+# Bloquear archivos innecesarios
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: *.log
+
+# Host preferido
+Host: https://drcuchichuchis.github.io
