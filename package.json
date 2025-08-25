@@ -1,0 +1,43 @@
+{
+  "name": "neo-tech-seo-automation",
+  "version": "1.0.0",
+  "description": "Sistema completo de automatización SEO para Neo-tech Argentina",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --host=localhost --open=/neo-tech-seo-interface.html",
+    "start": "live-server --port=3000 --host=localhost",
+    "build": "echo 'Build completed - static files ready'",
+    "test": "echo 'Testing SEO automation system'",
+    "check": "echo 'Checking SEO system integrity'"
+  },
+  "keywords": [
+    "seo",
+    "automation",
+    "google-positioning",
+    "mcp",
+    "neo-tech",
+    "argentina",
+    "web-development"
+  ],
+  "author": "Neo-tech Argentina",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.0",
+    "axios": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neo-tech-argentina/seo-automation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/neo-tech-argentina/seo-automation/issues"
+  },
+  "homepage": "https://neo-tech-argentina.github.io/seo-automation"
+}

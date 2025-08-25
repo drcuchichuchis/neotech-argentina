@@ -1,0 +1,47 @@
+[
+  {
+    "id": "alert_1756152076967_m1lk010fj",
+    "timestamp": "2025-08-25T20:01:16.967Z",
+    "cycle": 7,
+    "type": "warning",
+    "category": "Técnico",
+    "title": "🔧 Problema técnico detectado",
+    "message": "Schema markup incompleto en página de producto",
+    "priority": "medium",
+    "actionRequired": true,
+    "issueType": "schema_markup"
+  },
+  {
+    "id": "alert_1756152076966_f89v5zchr",
+    "timestamp": "2025-08-25T20:01:16.966Z",
+    "cycle": 7,
+    "type": "success",
+    "category": "Rankings",
+    "title": "📈 Mejora significativa en rankings",
+    "message": "Posición promedio mejoró 3.1 lugares (22.2 → 19.1)",
+    "priority": "high",
+    "actionRequired": false
+  },
+  {
+    "id": "alert_1756152051963_she8uhqo1",
+    "timestamp": "2025-08-25T20:00:51.963Z",
+    "cycle": 6,
+    "type": "success",
+    "category": "CTR",
+    "title": "🎯 Mejora en CTR orgánico",
+    "message": "CTR mejoró 0.57% (3.99% → 4.56%)",
+    "priority": "medium",
+    "actionRequired": false
+  },
+  {
+    "id": "alert_1756152026952_mumm9fp98",
+    "timestamp": "2025-08-25T20:00:26.952Z",
+    "cycle": 5,
+    "type": "info",
+    "category": "Visitantes",
+    "title": "👥 Pico de nuevos visitantes",
+    "message": "136 nuevos visitantes adicionales detectados. Analizar fuentes de tráfico.",
+    "priority": "medium",
+    "actionRequired": false
+  }
+]

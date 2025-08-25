@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo-tech Argentina - Centro de Control SEO</title>
+    <meta name="description" content="Centro de control SEO avanzado para Neo-tech Argentina. Monitoreo en tiempo real, análisis de posicionamiento y automatización integral.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #667eea;
+            --primary-dark: #5a6fd8;
+            --secondary-color: #764ba2;
+            --accent-color: #f093fb;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            --info-color: #3b82f6;
+            --background-color: #f8fafc;
+            --surface-color: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--background-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo-text h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        
+        .logo-text p {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            backdrop-filter: blur(10px);
+            font-size: 0.875rem;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--success-color);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Navigation */
+        .nav {
+            background: var(--surface-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        
+        .nav-tabs::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .nav-tab {
+            padding: 1rem 1.5rem;
+            border: none;
+            background: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-tab:hover {
+            color: var(--primary-color);
+            background: rgba(102, 126, 234, 0.05);
+        }
+        
+        .nav-tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            background: rgba(102, 126, 234, 0.05);
+        }
+        
+        /* Main Content */
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--surface-color);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        
+        .card-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+        }
+        
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .card-subtitle {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        
+        /* Metrics Cards */
+        .metric-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--surface-color);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .metric-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        .metric-change {
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--radius-sm);
+        }
+        
+        .metric-change.positive {
+            color: var(--success-color);
+            background: rgba(16, 185, 129, 0.1);
+        }
+        
+        .metric-change.negative {
+            color: var(--error-color);
+            background: rgba(239, 68, 68, 0.1);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-secondary {
+            background: var(--surface-color);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--background-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-success {
+            background: var(--success-color);
+            color: white;
+        }
+        
+        .btn-warning {
+            background: var(--warning-color);
+            color: white;
+        }
+        
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+        }
+        
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--surface-color);
+        }
+        
+        .table th,
+        .table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .table th {
+            background: var(--background-color);
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.875rem;
+        }
+        
+        .table td {
+            color: var(--text-secondary);
+        }
+        
+        .table tr:hover {
+            background: rgba(102, 126, 234, 0.02);
+        }
+        
+        /* Charts */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 1rem 0;
+        }
+        
+        /* Alerts */
+        .alert {
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            border-left: 4px solid;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .alert-success {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success-color);
+            color: var(--success-color);
+        }
+        
+        .alert-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--warning-color);
+            color: var(--warning-color);
+        }
+        
+        .alert-error {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--error-color);
+            color: var(--error-color);
+        }
+        
+        .alert-info {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: var(--info-color);
+            color: var(--info-color);
+        }
+        
+        /* Loading States */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-color);
+            border-top: 2px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 0.5rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .main {
+                padding: 1rem;
+            }
+            
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-tabs {
+                justify-content: flex-start;
+            }
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--background-color);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: var(--radius-sm);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-secondary);
+        }
+        
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .slide-up {
+            animation: slideUp 0.5s ease;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Neo-tech Argentina</h1>
+                    <p>Centro de Control SEO Avanzado</p>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span id="system-status">Sistema Activo</span>
+                </div>
+                <button class="btn btn-secondary btn-sm" onclick="openFullDashboard()">
+                    <i class="fas fa-external-link-alt"></i>
+                    Dashboard Completo
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="nav-tabs">
+                <button class="nav-tab active" onclick="showTab('overview')">
+                    <i class="fas fa-chart-line"></i>
+                    Resumen General
+                </button>
+                <button class="nav-tab" onclick="showTab('rankings')">
+                    <i class="fas fa-trophy"></i>
+                    Rankings
+                </button>
+                <button class="nav-tab" onclick="showTab('traffic')">
+                    <i class="fas fa-users"></i>
+                    Tráfico
+                </button>
+                <button class="nav-tab" onclick="showTab('technical')">
+                    <i class="fas fa-cogs"></i>
+                    Técnico
+                </button>
+                <button class="nav-tab" onclick="showTab('content')">
+                    <i class="fas fa-edit"></i>
+                    Contenido
+                </button>
+                <button class="nav-tab" onclick="showTab('competitors')">
+                    <i class="fas fa-eye"></i>
+                    Competencia
+                </button>
+                <button class="nav-tab" onclick="showTab('reports')">
+                    <i class="fas fa-file-alt"></i>
+                    Reportes
+                </button>
+                <button class="nav-tab" onclick="showTab('alerts')">
+                    <i class="fas fa-bell"></i>
+                    Alertas
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Overview Tab -->
+        <div id="overview" class="tab-content active">
+            <div class="grid grid-4" style="margin-bottom: 2rem;">
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="metric-value" id="avg-ranking">12</div>
+                    <div class="metric-label">Posición Promedio</div>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-up"></i> +3 posiciones
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="metric-value" id="organic-traffic">2,847</div>
+                    <div class="metric-label">Tráfico Orgánico</div>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-up"></i> +15.3%
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="metric-value" id="page-speed">89</div>
+                    <div class="metric-label">PageSpeed Score</div>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-up"></i> +5 puntos
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="metric-value" id="active-alerts">2</div>
+                    <div class="metric-label">Alertas Activas</div>
+                    <div class="metric-change negative">
+                        <i class="fas fa-arrow-down"></i> -1 alerta
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-chart-area"></i>
+                            Tendencia de Rankings
+                        </h3>
+                        <p class="card-subtitle">Últimos 30 días</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="rankings-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-chart-line"></i>
+                            Tráfico Orgánico
+                        </h3>
+                        <p class="card-subtitle">Últimos 30 días</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="traffic-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" style="margin-top: 1.5rem;">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-tasks"></i>
+                        Optimizaciones Recientes
+                    </h3>
+                    <p class="card-subtitle">Últimas acciones automatizadas</p>
+                </div>
+                <div class="card-body">
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Tipo</th>
+                                    <th>Descripción</th>
+                                    <th>Estado</th>
+                                    <th>Impacto</th>
+                                </tr>
+                            </thead>
+                            <tbody id="optimizations-table">
+                                <tr>
+                                    <td>2024-01-15 14:30</td>
+                                    <td><span class="badge badge-primary">Meta Tags</span></td>
+                                    <td>Actualización automática de meta descriptions</td>
+                                    <td><span class="badge badge-success">Completado</span></td>
+                                    <td>+2 posiciones promedio</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-01-15 12:15</td>
+                                    <td><span class="badge badge-info">Contenido</span></td>
+                                    <td>Optimización de densidad de palabras clave</td>
+                                    <td><span class="badge badge-success">Completado</span></td>
+                                    <td>+5% CTR</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-01-15 10:45</td>
+                                    <td><span class="badge badge-warning">Técnico</span></td>
+                                    <td>Optimización de velocidad de carga</td>
+                                    <td><span class="badge badge-success">Completado</span></td>
+                                    <td>+8 puntos PageSpeed</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Rankings Tab -->
+        <div id="rankings" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-trophy"></i>
+                        Monitoreo de Rankings
+                    </h3>
+                    <p class="card-subtitle">Posiciones actuales en Google</p>
+                </div>
+                <div class="card-body">
+                    <div class="loading" id="rankings-loading">
+                        <div class="spinner"></div>
+                        Cargando datos de rankings...
+                    </div>
+                    <div id="rankings-content" style="display: none;">
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Palabra Clave</th>
+                                        <th>Posición Actual</th>
+                                        <th>Posición Anterior</th>
+                                        <th>Cambio</th>
+                                        <th>Volumen</th>
+                                        <th>URL</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="rankings-table-body">
+                                    <!-- Datos cargados dinámicamente -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Traffic Tab -->
+        <div id="traffic" class="tab-content">
+            <div class="grid grid-3" style="margin-bottom: 2rem;">
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="metric-value">2,847</div>
+                    <div class="metric-label">Sesiones Orgánicas</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-mouse-pointer"></i>
+                    </div>
+                    <div class="metric-value">3.2%</div>
+                    <div class="metric-label">CTR Promedio</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="metric-value">2:34</div>
+                    <div class="metric-label">Tiempo en Sitio</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-chart-bar"></i>
+                        Análisis de Tráfico Detallado
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="detailed-traffic-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Technical Tab -->
+        <div id="technical" class="tab-content">
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-tachometer-alt"></i>
+                            Core Web Vitals
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="grid grid-3">
+                            <div class="metric-card">
+                                <div class="metric-value" style="color: var(--success-color);">2.1s</div>
+                                <div class="metric-label">LCP</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value" style="color: var(--success-color);">85ms</div>
+                                <div class="metric-label">FID</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value" style="color: var(--warning-color);">0.12</div>
+                                <div class="metric-label">CLS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-shield-alt"></i>
+                            Estado Técnico
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-success">
+                            <i class="fas fa-check-circle"></i>
+                            SSL configurado correctamente
+                        </div>
+                        <div class="alert alert-success">
+                            <i class="fas fa-check-circle"></i>
+                            Sitemap.xml actualizado
+                        </div>
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            3 imágenes sin optimizar
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Content Tab -->
+        <div id="content" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-edit"></i>
+                        Optimización de Contenido
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        El sistema está analizando el contenido automáticamente...
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Competitors Tab -->
+        <div id="competitors" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-eye"></i>
+                        Análisis de Competencia
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        Monitoreando competidores automáticamente...
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Reports Tab -->
+        <div id="reports" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-file-alt"></i>
+                        Reportes Automáticos
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="grid grid-3">
+                        <button class="btn btn-primary" onclick="generateReport('daily')">
+                            <i class="fas fa-calendar-day"></i>
+                            Reporte Diario
+                        </button>
+                        <button class="btn btn-primary" onclick="generateReport('weekly')">
+                            <i class="fas fa-calendar-week"></i>
+                            Reporte Semanal
+                        </button>
+                        <button class="btn btn-primary" onclick="generateReport('monthly')">
+                            <i class="fas fa-calendar-alt"></i>
+                            Reporte Mensual
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Alerts Tab -->
+        <div id="alerts" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-bell"></i>
+                        Alertas del Sistema
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div id="alerts-container">
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div>
+                                <strong>Caída de ranking detectada</strong><br>
+                                La palabra clave "desarrollo web argentina" bajó 3 posiciones
+                            </div>
+                        </div>
+                        <div class="alert alert-error">
+                            <i class="fas fa-times-circle"></i>
+                            <div>
+                                <strong>Problema técnico</strong><br>
+                                Velocidad de carga por debajo del umbral en página de servicios
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Scripts -->
+    <script src="seo-apis-advanced.js"></script>
+    <script src="seo-automation.js"></script>
+    <script src="mcp-seo-controller.js"></script>
+    <script src="google-positioning-automation.js"></script>
+    <script src="seo-reports-alerts.js"></script>
+    
+    <script>
+        // Variables globales
+        let currentTab = 'overview';
+        let seoController = null;
+        let charts = {};
+        
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('🚀 Iniciando Neo-tech SEO Interface...');
+            
+            try {
+                // Inicializar sistema SEO
+                await initializeSEOSystem();
+                
+                // Cargar datos iniciales
+                await loadInitialData();
+                
+                // Configurar actualizaciones automáticas
+                setupAutoRefresh();
+                
+                // Configurar event listeners
+                setupEventListeners();
+                
+                console.log('✅ Neo-tech SEO Interface iniciado exitosamente');
+                
+            } catch (error) {
+                console.error('❌ Error al inicializar la interfaz:', error);
+                showError('Error al inicializar el sistema SEO');
+            }
+        });
+        
+        /**
+         * Inicializa el sistema SEO completo
+         */
+        async function initializeSEOSystem() {
+            // Inicializar controlador MCP
+            if (window.MCPSEOController) {
+                seoController = new window.MCPSEOController();
+                await seoController.initializeController();
+            }
+            
+            // Inicializar sistema de reportes
+            if (window.startSEOReporting) {
+                await window.startSEOReporting();
+            }
+            
+            // Inicializar posicionamiento automático
+            if (window.startGooglePositioning) {
+                await window.startGooglePositioning();
+            }
+        }
+        
+        /**
+         * Carga datos iniciales
+         */
+        async function loadInitialData() {
+            // Cargar métricas generales
+            await updateOverviewMetrics();
+            
+            // Inicializar gráficos
+            initializeCharts();
+            
+            // Cargar datos de rankings
+            await loadRankingsData();
+        }
+        
+        /**
+         * Actualiza métricas del resumen general
+         */
+        async function updateOverviewMetrics() {
+            try {
+                // Simular datos (en producción vendrían de las APIs)
+                const metrics = {
+                    avgRanking: Math.floor(Math.random() * 20) + 5,
+                    organicTraffic: Math.floor(Math.random() * 2000) + 1500,
+                    pageSpeed: Math.floor(Math.random() * 20) + 80,
+                    activeAlerts: Math.floor(Math.random() * 5)
+                };
+                
+                // Actualizar elementos del DOM
+                document.getElementById('avg-ranking').textContent = metrics.avgRanking;
+                document.getElementById('organic-traffic').textContent = metrics.organicTraffic.toLocaleString();
+                document.getElementById('page-speed').textContent = metrics.pageSpeed;
+                document.getElementById('active-alerts').textContent = metrics.activeAlerts;
+                
+                // Actualizar estado del sistema
+                updateSystemStatus(metrics.activeAlerts === 0 ? 'optimal' : 'attention');
+                
+            } catch (error) {
+                console.error('Error al actualizar métricas:', error);
+            }
+        }
+        
+        /**
+         * Actualiza el estado del sistema
+         */
+        function updateSystemStatus(status) {
+            const statusElement = document.getElementById('system-status');
+            const statusDot = document.querySelector('.status-dot');
+            
+            switch (status) {
+                case 'optimal':
+                    statusElement.textContent = 'Sistema Óptimo';
+                    statusDot.style.background = 'var(--success-color)';
+                    break;
+                case 'attention':
+                    statusElement.textContent = 'Requiere Atención';
+                    statusDot.style.background = 'var(--warning-color)';
+                    break;
+                case 'error':
+                    statusElement.textContent = 'Error del Sistema';
+                    statusDot.style.background = 'var(--error-color)';
+                    break;
+                default:
+                    statusElement.textContent = 'Estado Desconocido';
+                    statusDot.style.background = 'var(--text-secondary)';
+            }
+        }
+        
+        /**
+         * Inicializa los gráficos
+         */
+        function initializeCharts() {
+            // Gráfico de rankings
+            const rankingsCtx = document.getElementById('rankings-chart');
+            if (rankingsCtx) {
+                charts.rankings = new Chart(rankingsCtx, {
+                    type: 'line',
+                    data: {
+                        labels: generateDateLabels(30),
+                        datasets: [{
+                            label: 'Posición Promedio',
+                            data: generateRankingData(30),
+                            borderColor: 'rgb(102, 126, 234)',
+                            backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            y: {
+                                reverse: true,
+                                beginAtZero: false
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Gráfico de tráfico
+            const trafficCtx = document.getElementById('traffic-chart');
+            if (trafficCtx) {
+                charts.traffic = new Chart(trafficCtx, {
+                    type: 'line',
+                    data: {
+                        labels: generateDateLabels(30),
+                        datasets: [{
+                            label: 'Tráfico Orgánico',
+                            data: generateTrafficData(30),
+                            borderColor: 'rgb(16, 185, 129)',
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+            }
+        }
+        
+        /**
+         * Genera etiquetas de fecha
+         */
+        function generateDateLabels(days) {
+            const labels = [];
+            for (let i = days - 1; i >= 0; i--) {
+                const date = new Date();
+                date.setDate(date.getDate() - i);
+                labels.push(date.toLocaleDateString('es-ES', { month: 'short', day: 'numeric' }));
+            }
+            return labels;
+        }
+        
+        /**
+         * Genera datos de ranking simulados
+         */
+        function generateRankingData(days) {
+            const data = [];
+            let currentRank = 15;
+            
+            for (let i = 0; i < days; i++) {
+                currentRank += (Math.random() - 0.5) * 4;
+                currentRank = Math.max(1, Math.min(50, currentRank));
+                data.push(Math.round(currentRank));
+            }
+            
+            return data;
+        }
+        
+        /**
+         * Genera datos de tráfico simulados
+         */
+        function generateTrafficData(days) {
+            const data = [];
+            let currentTraffic = 2000;
+            
+            for (let i = 0; i < days; i++) {
+                currentTraffic += (Math.random() - 0.4) * 200;
+                currentTraffic = Math.max(500, currentTraffic);
+                data.push(Math.round(currentTraffic));
+            }
+            
+            return data;
+        }
+        
+        /**
+         * Carga datos de rankings
+         */
+        async function loadRankingsData() {
+            const loadingElement = document.getElementById('rankings-loading');
+            const contentElement = document.getElementById('rankings-content');
+            const tableBody = document.getElementById('rankings-table-body');
+            
+            try {
+                // Simular carga de datos
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                // Datos simulados de rankings
+                const rankingsData = [
+                    {
+                        keyword: 'desarrollo web argentina',
+                        currentPosition: 8,
+                        previousPosition: 12,
+                        volume: '1,200',
+                        url: '/servicios/desarrollo-web'
+                    },
+                    {
+                        keyword: 'neo-tech argentina',
+                        currentPosition: 3,
+                        previousPosition: 4,
+                        volume: '800',
+                        url: '/'
+                    },
+                    {
+                        keyword: 'aplicaciones móviles',
+                        currentPosition: 15,
+                        previousPosition: 11,
+                        volume: '2,100',
+                        url: '/servicios/apps-moviles'
+                    }
+                ];
+                
+                // Llenar tabla
+                tableBody.innerHTML = '';
+                rankingsData.forEach(item => {
+                    const change = item.currentPosition - item.previousPosition;
+                    const changeClass = change < 0 ? 'positive' : change > 0 ? 'negative' : 'neutral';
+                    const changeIcon = change < 0 ? 'fa-arrow-up' : change > 0 ? 'fa-arrow-down' : 'fa-minus';
+                    
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td><strong>${item.keyword}</strong></td>
+                        <td><span class="badge badge-primary">#${item.currentPosition}</span></td>
+                        <td>#${item.previousPosition}</td>
+                        <td class="${changeClass}">
+                            <i class="fas ${changeIcon}"></i>
+                            ${Math.abs(change)} posiciones
+                        </td>
+                        <td>${item.volume}</td>
+                        <td><a href="${item.url}" title="${item.url} - Neo-tech Argentina | Optimizado automáticamente" target="_blank">${item.url}</a></td>
+                        <td>
+                            <button class="btn btn-sm btn-secondary" onclick="optimizeKeyword('${item.keyword}')">
+                                <i class="fas fa-magic"></i> Optimizar
+                            </button>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+                
+                // Mostrar contenido
+                loadingElement.style.display = 'none';
+                contentElement.style.display = 'block';
+                
+            } catch (error) {
+                console.error('Error al cargar datos de rankings:', error);
+                loadingElement.innerHTML = '<div class="alert alert-error"><i class="fas fa-exclamation-triangle"></i> Error al cargar datos</div>';
+            }
+        }
+        
+        /**
+         * Configura actualizaciones automáticas
+         */
+        function setupAutoRefresh() {
+            // Actualizar métricas cada 5 minutos
+            setInterval(updateOverviewMetrics, 5 * 60 * 1000);
+            
+            // Actualizar gráficos cada 10 minutos
+            setInterval(() => {
+                if (charts.rankings) {
+                    charts.rankings.data.datasets[0].data = generateRankingData(30);
+                    charts.rankings.update();
+                }
+                if (charts.traffic) {
+                    charts.traffic.data.datasets[0].data = generateTrafficData(30);
+                    charts.traffic.update();
+                }
+            }, 10 * 60 * 1000);
+        }
+        
+        /**
+         * Configura event listeners
+         */
+        function setupEventListeners() {
+            // Escuchar alertas del sistema
+            window.addEventListener('seo-alert-triggered', function(event) {
+                showAlert(event.detail);
+            });
+            
+            // Escuchar actualizaciones de estado
+            window.addEventListener('seo-status-updated', function(event) {
+                updateSystemStatus(event.detail.status);
+            });
+        }
+        
+        /**
+         * Muestra una alerta en la interfaz
+         */
+        function showAlert(alertData) {
+            const alertsContainer = document.getElementById('alerts-container');
+            
+            const alertElement = document.createElement('div');
+            alertElement.className = `alert alert-${alertData.severity === 'high' ? 'error' : 'warning'}`;
+            alertElement.innerHTML = `
+                <i class="fas fa-${alertData.severity === 'high' ? 'times-circle' : 'exclamation-triangle'}"></i>
+                <div>
+                    <strong>${alertData.title}</strong><br>
+                    ${alertData.message}
+                </div>
+            `;
+            
+            alertsContainer.insertBefore(alertElement, alertsContainer.firstChild);
+            
+            // Remover después de 10 segundos
+            setTimeout(() => {
+                alertElement.remove();
+            }, 10000);
+        }
+        
+        /**
+         * Muestra un error en la interfaz
+         */
+        function showError(message) {
+            const errorAlert = document.createElement('div');
+            errorAlert.className = 'alert alert-error';
+            errorAlert.innerHTML = `
+                <i class="fas fa-times-circle"></i>
+                ${message}
+            `;
+            
+            document.body.insertBefore(errorAlert, document.body.firstChild);
+            
+            setTimeout(() => {
+                errorAlert.remove();
+            }, 5000);
+        }
+        
+        /**
+         * Cambia de pestaña
+         */
+        function showTab(tabName) {
+            // Ocultar todas las pestañas
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Desactivar todos los botones de navegación
+            document.querySelectorAll('.nav-tab').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Mostrar pestaña seleccionada
+            const selectedTab = document.getElementById(tabName);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+            
+            // Activar botón de navegación
+            event.target.classList.add('active');
+            
+            currentTab = tabName;
+            
+            // Cargar datos específicos de la pestaña si es necesario
+            loadTabData(tabName);
+        }
+        
+        /**
+         * Carga datos específicos de una pestaña
+         */
+        async function loadTabData(tabName) {
+            switch (tabName) {
+                case 'rankings':
+                    if (document.getElementById('rankings-table-body').children.length === 0) {
+                        await loadRankingsData();
+                    }
+                    break;
+                case 'traffic':
+                    // Cargar datos de tráfico detallado
+                    break;
+                case 'technical':
+                    // Cargar datos técnicos
+                    break;
+                // Agregar más casos según sea necesario
+            }
+        }
+        
+        /**
+         * Abre el dashboard completo
+         */
+        function openFullDashboard() {
+            window.open('seo-dashboard.html', '_blank');
+        }
+        
+        /**
+         * Optimiza una palabra clave específica
+         */
+        async function optimizeKeyword(keyword) {
+            console.log(`🎯 Optimizando palabra clave: ${keyword}`);
+            
+            if (seoController && seoController.optimizeKeyword) {
+                try {
+                    await seoController.optimizeKeyword(keyword);
+                    showAlert({
+                        title: 'Optimización Iniciada',
+                        message: `Optimización automática iniciada para "${keyword}"`,
+                        severity: 'info'
+                    });
+                } catch (error) {
+                    console.error('Error al optimizar palabra clave:', error);
+                    showError('Error al iniciar optimización');
+                }
+            }
+        }
+        
+        /**
+         * Genera un reporte
+         */
+        async function generateReport(type) {
+            console.log(`📊 Generando reporte ${type}...`);
+            
+            if (window.generateManualSEOReport) {
+                try {
+                    const report = await window.generateManualSEOReport(type);
+                    showAlert({
+                        title: 'Reporte Generado',
+                        message: `Reporte ${type} generado exitosamente`,
+                        severity: 'info'
+                    });
+                } catch (error) {
+                    console.error('Error al generar reporte:', error);
+                    showError('Error al generar reporte');
+                }
+            }
+        }
+        
+        // Agregar estilos para badges
+        const badgeStyles = `
+            .badge {
+                display: inline-block;
+                padding: 0.25rem 0.5rem;
+                font-size: 0.75rem;
+                font-weight: 600;
+                border-radius: var(--radius-sm);
+                text-transform: uppercase;
+                letter-spacing: 0.025em;
+            }
+            
+            .badge-primary {
+                background: var(--primary-color);
+                color: white;
+            }
+            
+            .badge-success {
+                background: var(--success-color);
+                color: white;
+            }
+            
+            .badge-warning {
+                background: var(--warning-color);
+                color: white;
+            }
+            
+            .badge-info {
+                background: var(--info-color);
+                color: white;
+            }
+            
+            .positive {
+                color: var(--success-color);
+            }
+            
+            .negative {
+                color: var(--error-color);
+            }
+            
+            .neutral {
+                color: var(--text-secondary);
+            }
+        `;
+        
+        // Agregar estilos al documento
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = badgeStyles;
+        document.head.appendChild(styleSheet);
+        
+        console.log('🎨 Neo-tech SEO Interface cargado');
+    </script>
+</body>
+</html>

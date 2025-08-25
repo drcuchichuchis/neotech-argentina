@@ -1,0 +1,484 @@
+{
+  "keywords": [
+    {
+      "keyword": "transformación digital argentina",
+      "currentPosition": 8,
+      "targetPosition": 5
+    },
+    {
+      "keyword": "desarrollo software personalizado",
+      "currentPosition": 16,
+      "targetPosition": 8
+    },
+    {
+      "keyword": "consultoría tecnológica empresas",
+      "currentPosition": 20,
+      "targetPosition": 12
+    },
+    {
+      "keyword": "automatización procesos negocio",
+      "currentPosition": 14,
+      "targetPosition": 6
+    },
+    {
+      "keyword": "innovación digital pymes",
+      "currentPosition": 12,
+      "targetPosition": 10
+    },
+    {
+      "keyword": "neo-tech argentina",
+      "currentPosition": 1,
+      "targetPosition": 3
+    },
+    {
+      "keyword": "soluciones tecnológicas integrales",
+      "currentPosition": 24,
+      "targetPosition": 15
+    }
+  ],
+  "history": [
+    {
+      "keyword": "transformación digital argentina",
+      "position": 12,
+      "change": 3,
+      "timestamp": "2025-08-25T19:57:27.036Z",
+      "cycle": 1
+    },
+    {
+      "keyword": "desarrollo software personalizado",
+      "position": 22,
+      "change": 1,
+      "timestamp": "2025-08-25T19:57:27.036Z",
+      "cycle": 1
+    },
+    {
+      "keyword": "consultoría tecnológica empresas",
+      "position": 31,
+      "change": 0,
+      "timestamp": "2025-08-25T19:57:27.036Z",
+      "cycle": 1
+    },
+    {
+      "keyword": "automatización procesos negocio",
+      "position": 18,
+      "change": 0,
+      "timestamp": "2025-08-25T19:57:27.036Z",
+      "cycle": 1
+    },
+    {
+      "keyword": "innovación digital pymes",
+      "position": 27,
+      "change": 0,
+      "timestamp": "2025-08-25T19:57:27.036Z",
+      "cycle": 1
+    },
+    {
+      "keyword": "neo-tech argentina",
+      "position": 7,
+      "change": 1,
+      "timestamp": "2025-08-25T19:57:27.036Z",
+      "cycle": 1
+    },
+    {
+      "keyword": "soluciones tecnológicas integrales",
+      "position": 33,
+      "change": 2,
+      "timestamp": "2025-08-25T19:57:27.036Z",
+      "cycle": 1
+    },
+    {
+      "keyword": "transformación digital argentina",
+      "position": 13,
+      "change": -1,
+      "timestamp": "2025-08-25T19:57:57.043Z",
+      "cycle": 2
+    },
+    {
+      "keyword": "desarrollo software personalizado",
+      "position": 22,
+      "change": 0,
+      "timestamp": "2025-08-25T19:57:57.043Z",
+      "cycle": 2
+    },
+    {
+      "keyword": "consultoría tecnológica empresas",
+      "position": 31,
+      "change": 0,
+      "timestamp": "2025-08-25T19:57:57.043Z",
+      "cycle": 2
+    },
+    {
+      "keyword": "automatización procesos negocio",
+      "position": 17,
+      "change": 1,
+      "timestamp": "2025-08-25T19:57:57.043Z",
+      "cycle": 2
+    },
+    {
+      "keyword": "innovación digital pymes",
+      "position": 24,
+      "change": 3,
+      "timestamp": "2025-08-25T19:57:57.043Z",
+      "cycle": 2
+    },
+    {
+      "keyword": "neo-tech argentina",
+      "position": 7,
+      "change": 0,
+      "timestamp": "2025-08-25T19:57:57.043Z",
+      "cycle": 2
+    },
+    {
+      "keyword": "soluciones tecnológicas integrales",
+      "position": 32,
+      "change": 1,
+      "timestamp": "2025-08-25T19:57:57.043Z",
+      "cycle": 2
+    },
+    {
+      "keyword": "transformación digital argentina",
+      "position": 15,
+      "change": -2,
+      "timestamp": "2025-08-25T19:58:27.047Z",
+      "cycle": 3
+    },
+    {
+      "keyword": "desarrollo software personalizado",
+      "position": 21,
+      "change": 1,
+      "timestamp": "2025-08-25T19:58:27.047Z",
+      "cycle": 3
+    },
+    {
+      "keyword": "consultoría tecnológica empresas",
+      "position": 29,
+      "change": 2,
+      "timestamp": "2025-08-25T19:58:27.047Z",
+      "cycle": 3
+    },
+    {
+      "keyword": "automatización procesos negocio",
+      "position": 16,
+      "change": 1,
+      "timestamp": "2025-08-25T19:58:27.047Z",
+      "cycle": 3
+    },
+    {
+      "keyword": "innovación digital pymes",
+      "position": 22,
+      "change": 2,
+      "timestamp": "2025-08-25T19:58:27.047Z",
+      "cycle": 3
+    },
+    {
+      "keyword": "neo-tech argentina",
+      "position": 4,
+      "change": 3,
+      "timestamp": "2025-08-25T19:58:27.047Z",
+      "cycle": 3
+    },
+    {
+      "keyword": "soluciones tecnológicas integrales",
+      "position": 31,
+      "change": 1,
+      "timestamp": "2025-08-25T19:58:27.047Z",
+      "cycle": 3
+    },
+    {
+      "keyword": "transformación digital argentina",
+      "position": 12,
+      "change": 3,
+      "timestamp": "2025-08-25T19:58:57.050Z",
+      "cycle": 4
+    },
+    {
+      "keyword": "desarrollo software personalizado",
+      "position": 20,
+      "change": 1,
+      "timestamp": "2025-08-25T19:58:57.050Z",
+      "cycle": 4
+    },
+    {
+      "keyword": "consultoría tecnológica empresas",
+      "position": 28,
+      "change": 1,
+      "timestamp": "2025-08-25T19:58:57.050Z",
+      "cycle": 4
+    },
+    {
+      "keyword": "automatización procesos negocio",
+      "position": 18,
+      "change": -2,
+      "timestamp": "2025-08-25T19:58:57.050Z",
+      "cycle": 4
+    },
+    {
+      "keyword": "innovación digital pymes",
+      "position": 20,
+      "change": 2,
+      "timestamp": "2025-08-25T19:58:57.050Z",
+      "cycle": 4
+    },
+    {
+      "keyword": "neo-tech argentina",
+      "position": 3,
+      "change": 1,
+      "timestamp": "2025-08-25T19:58:57.050Z",
+      "cycle": 4
+    },
+    {
+      "keyword": "soluciones tecnológicas integrales",
+      "position": 30,
+      "change": 1,
+      "timestamp": "2025-08-25T19:58:57.050Z",
+      "cycle": 4
+    },
+    {
+      "keyword": "transformación digital argentina",
+      "position": 10,
+      "change": 2,
+      "timestamp": "2025-08-25T19:59:27.053Z",
+      "cycle": 5
+    },
+    {
+      "keyword": "desarrollo software personalizado",
+      "position": 17,
+      "change": 3,
+      "timestamp": "2025-08-25T19:59:27.053Z",
+      "cycle": 5
+    },
+    {
+      "keyword": "consultoría tecnológica empresas",
+      "position": 26,
+      "change": 2,
+      "timestamp": "2025-08-25T19:59:27.053Z",
+      "cycle": 5
+    },
+    {
+      "keyword": "automatización procesos negocio",
+      "position": 18,
+      "change": 0,
+      "timestamp": "2025-08-25T19:59:27.053Z",
+      "cycle": 5
+    },
+    {
+      "keyword": "innovación digital pymes",
+      "position": 17,
+      "change": 3,
+      "timestamp": "2025-08-25T19:59:27.053Z",
+      "cycle": 5
+    },
+    {
+      "keyword": "neo-tech argentina",
+      "position": 1,
+      "change": 2,
+      "timestamp": "2025-08-25T19:59:27.053Z",
+      "cycle": 5
+    },
+    {
+      "keyword": "soluciones tecnológicas integrales",
+      "position": 29,
+      "change": 1,
+      "timestamp": "2025-08-25T19:59:27.053Z",
+      "cycle": 5
+    },
+    {
+      "keyword": "transformación digital argentina",
+      "position": 10,
+      "change": 0,
+      "timestamp": "2025-08-25T19:59:57.059Z",
+      "cycle": 6
+    },
+    {
+      "keyword": "desarrollo software personalizado",
+      "position": 16,
+      "change": 1,
+      "timestamp": "2025-08-25T19:59:57.059Z",
+      "cycle": 6
+    },
+    {
+      "keyword": "consultoría tecnológica empresas",
+      "position": 24,
+      "change": 2,
+      "timestamp": "2025-08-25T19:59:57.059Z",
+      "cycle": 6
+    },
+    {
+      "keyword": "automatización procesos negocio",
+      "position": 16,
+      "change": 2,
+      "timestamp": "2025-08-25T19:59:57.059Z",
+      "cycle": 6
+    },
+    {
+      "keyword": "innovación digital pymes",
+      "position": 14,
+      "change": 3,
+      "timestamp": "2025-08-25T19:59:57.059Z",
+      "cycle": 6
+    },
+    {
+      "keyword": "neo-tech argentina",
+      "position": 1,
+      "change": 0,
+      "timestamp": "2025-08-25T19:59:57.059Z",
+      "cycle": 6
+    },
+    {
+      "keyword": "soluciones tecnológicas integrales",
+      "position": 27,
+      "change": 2,
+      "timestamp": "2025-08-25T19:59:57.059Z",
+      "cycle": 6
+    },
+    {
+      "keyword": "transformación digital argentina",
+      "position": 10,
+      "change": 0,
+      "timestamp": "2025-08-25T20:00:27.064Z",
+      "cycle": 7
+    },
+    {
+      "keyword": "desarrollo software personalizado",
+      "position": 13,
+      "change": 3,
+      "timestamp": "2025-08-25T20:00:27.064Z",
+      "cycle": 7
+    },
+    {
+      "keyword": "consultoría tecnológica empresas",
+      "position": 22,
+      "change": 2,
+      "timestamp": "2025-08-25T20:00:27.064Z",
+      "cycle": 7
+    },
+    {
+      "keyword": "automatización procesos negocio",
+      "position": 16,
+      "change": 0,
+      "timestamp": "2025-08-25T20:00:27.064Z",
+      "cycle": 7
+    },
+    {
+      "keyword": "innovación digital pymes",
+      "position": 14,
+      "change": 0,
+      "timestamp": "2025-08-25T20:00:27.064Z",
+      "cycle": 7
+    },
+    {
+      "keyword": "neo-tech argentina",
+      "position": 1,
+      "change": 0,
+      "timestamp": "2025-08-25T20:00:27.064Z",
+      "cycle": 7
+    },
+    {
+      "keyword": "soluciones tecnológicas integrales",
+      "position": 26,
+      "change": 1,
+      "timestamp": "2025-08-25T20:00:27.064Z",
+      "cycle": 7
+    },
+    {
+      "keyword": "transformación digital argentina",
+      "position": 8,
+      "change": 2,
+      "timestamp": "2025-08-25T20:00:57.079Z",
+      "cycle": 8
+    },
+    {
+      "keyword": "desarrollo software personalizado",
+      "position": 14,
+      "change": -1,
+      "timestamp": "2025-08-25T20:00:57.079Z",
+      "cycle": 8
+    },
+    {
+      "keyword": "consultoría tecnológica empresas",
+      "position": 20,
+      "change": 2,
+      "timestamp": "2025-08-25T20:00:57.079Z",
+      "cycle": 8
+    },
+    {
+      "keyword": "automatización procesos negocio",
+      "position": 15,
+      "change": 1,
+      "timestamp": "2025-08-25T20:00:57.079Z",
+      "cycle": 8
+    },
+    {
+      "keyword": "innovación digital pymes",
+      "position": 11,
+      "change": 3,
+      "timestamp": "2025-08-25T20:00:57.079Z",
+      "cycle": 8
+    },
+    {
+      "keyword": "neo-tech argentina",
+      "position": 1,
+      "change": 0,
+      "timestamp": "2025-08-25T20:00:57.079Z",
+      "cycle": 8
+    },
+    {
+      "keyword": "soluciones tecnológicas integrales",
+      "position": 26,
+      "change": 0,
+      "timestamp": "2025-08-25T20:00:57.079Z",
+      "cycle": 8
+    },
+    {
+      "keyword": "transformación digital argentina",
+      "position": 8,
+      "change": 0,
+      "timestamp": "2025-08-25T20:01:27.088Z",
+      "cycle": 9
+    },
+    {
+      "keyword": "desarrollo software personalizado",
+      "position": 16,
+      "change": -2,
+      "timestamp": "2025-08-25T20:01:27.088Z",
+      "cycle": 9
+    },
+    {
+      "keyword": "consultoría tecnológica empresas",
+      "position": 20,
+      "change": 0,
+      "timestamp": "2025-08-25T20:01:27.088Z",
+      "cycle": 9
+    },
+    {
+      "keyword": "automatización procesos negocio",
+      "position": 14,
+      "change": 1,
+      "timestamp": "2025-08-25T20:01:27.088Z",
+      "cycle": 9
+    },
+    {
+      "keyword": "innovación digital pymes",
+      "position": 12,
+      "change": -1,
+      "timestamp": "2025-08-25T20:01:27.088Z",
+      "cycle": 9
+    },
+    {
+      "keyword": "neo-tech argentina",
+      "position": 1,
+      "change": 0,
+      "timestamp": "2025-08-25T20:01:27.088Z",
+      "cycle": 9
+    },
+    {
+      "keyword": "soluciones tecnológicas integrales",
+      "position": 24,
+      "change": 2,
+      "timestamp": "2025-08-25T20:01:27.088Z",
+      "cycle": 9
+    }
+  ],
+  "lastUpdate": "2025-08-25T20:01:27.090Z",
+  "trackingCycle": 9
+}
