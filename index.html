@@ -133,6 +133,7 @@
                 <p class="hero-description">
                     Soluciones tecnológicas de vanguardia, transformación digital empresarial y automatización inteligente. Pioneros en innovación tecnológica argentina.
                 </p>
+                
                 <div class="hero-actions">
                     <button class="btn-primary" onclick="NeoTech.showContactForm()">
                         Comenzar Ahora
@@ -170,6 +171,8 @@
             <div class="stat-number" data-target="99" data-suffix="%">0</div>
             <div class="stat-label">Satisfacción</div>
         </div>
+        
+        
         
         <!-- Services Section -->
         <section id="servicios" class="bento-card service-card">
@@ -270,6 +273,7 @@
                 </div>
             </div>
         </section>
+        
         
         <!-- Mini Services -->
         <div class="bento-card mini-service">
@@ -534,6 +538,7 @@
         </div>
     </footer>
     
+    
     <!-- WhatsApp Bubble -->
     <a href="https://wa.me/541169276629?text=Hola%20Neo-tech!%20Necesito%20información%20sobre%20sus%20servicios" 
        class="whatsapp-bubble" 
@@ -549,223 +554,12 @@
     <!-- Scripts -->
     <script src="script-bento.js"></script>
     
-    <!-- SEO Automation System -->
-    <script src="seo-apis-advanced.js"></script>
-    <script src="seo-automation.js"></script>
-    <script src="mcp-seo-controller.js"></script>
-    
-    <!-- SEO Dashboard Access -->
-    <div id="seo-dashboard-access" class="seo-access-panel">
-        <button id="seo-dashboard-btn" class="seo-dashboard-button" onclick="openSEODashboard()">
-            <span class="seo-icon">📊</span>
-            <span class="seo-text">SEO Dashboard</span>
-        </button>
-        <div class="seo-status-indicator" id="seo-status">
-            <span class="status-dot"></span>
-            <span class="status-text">SEO Activo</span>
-        </div>
-    </div>
     
     <script>
-        // Función para abrir el dashboard SEO
-        function openSEODashboard() {
-            window.open('seo-dashboard.html', '_blank', 'width=1400,height=900,scrollbars=yes,resizable=yes');
-        }
-        
-        // Inicializar sistema SEO cuando la página esté lista
+        // Funciones básicas del sitio web
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('🚀 Inicializando sistema SEO avanzado...');
-            
-            // Verificar estado del sistema SEO
-            setTimeout(() => {
-                if (window.getSEOSystemStatus) {
-                    const status = window.getSEOSystemStatus();
-                    const statusIndicator = document.getElementById('seo-status');
-                    const statusDot = statusIndicator.querySelector('.status-dot');
-                    const statusText = statusIndicator.querySelector('.status-text');
-                    
-                    if (status.initialized && status.seoAPIsLoaded) {
-                        statusDot.style.backgroundColor = '#00ff88';
-                        statusText.textContent = 'SEO Optimizado';
-                        console.log('✅ Sistema SEO completamente inicializado');
-                    } else if (status.initialized) {
-                        statusDot.style.backgroundColor = '#ffaa00';
-                        statusText.textContent = 'SEO Básico';
-                        console.log('⚠️ Sistema SEO inicializado (modo básico)');
-                    } else {
-                        statusDot.style.backgroundColor = '#ff4444';
-                        statusText.textContent = 'SEO Inactivo';
-                        console.log('❌ Error en inicialización SEO');
-                    }
-                }
-            }, 2000);
-            
-            // Ejecutar análisis SEO inicial después de 5 segundos
-            setTimeout(() => {
-                if (window.forceSEOAnalysis) {
-                    console.log('🔍 Ejecutando análisis SEO inicial...');
-                    window.forceSEOAnalysis().then(result => {
-                        console.log('📊 Análisis SEO completado:', result);
-                    }).catch(error => {
-                        console.error('❌ Error en análisis SEO:', error);
-                    });
-                }
-            }, 5000);
-        });
-        
-        // Función para mostrar notificaciones SEO
-        function showSEONotification(message, type = 'info') {
-            const notification = document.createElement('div');
-            notification.className = `seo-notification seo-notification-${type}`;
-            notification.innerHTML = `
-                <span class="notification-icon">${type === 'success' ? '✅' : type === 'warning' ? '⚠️' : 'ℹ️'}</span>
-                <span class="notification-text">${message}</span>
-            `;
-            
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.classList.add('show');
-            }, 100);
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-                setTimeout(() => {
-                    document.body.removeChild(notification);
-                }, 300);
-            }, 4000);
-        }
-        
-        // Escuchar eventos del sistema SEO
-        window.addEventListener('seo-optimization-complete', function(event) {
-            showSEONotification('Optimización SEO completada exitosamente', 'success');
-        });
-        
-        window.addEventListener('seo-ranking-alert', function(event) {
-            showSEONotification(`Alerta de ranking: ${event.detail.message}`, 'warning');
+            console.log('✅ Sitio web cargado correctamente');
         });
     </script>
-    
-    <style>
-        /* Estilos para el panel de acceso SEO */
-        .seo-access-panel {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .seo-dashboard-button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border: none;
-            border-radius: 12px;
-            padding: 12px 20px;
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .seo-dashboard-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
-        
-        .seo-status-indicator {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            padding: 8px 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 12px;
-            color: white;
-        }
-        
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: #ffaa00;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-        
-        /* Estilos para notificaciones SEO */
-        .seo-notification {
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            transform: translateX(400px);
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 1001;
-            max-width: 350px;
-        }
-        
-        .seo-notification.show {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        
-        .seo-notification-success {
-            border-left: 4px solid #00ff88;
-        }
-        
-        .seo-notification-warning {
-            border-left: 4px solid #ffaa00;
-        }
-        
-        .seo-notification-info {
-            border-left: 4px solid #667eea;
-        }
-        
-        .notification-text {
-            font-size: 14px;
-            color: #333;
-            font-weight: 500;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .seo-access-panel {
-                top: 10px;
-                right: 10px;
-            }
-            
-            .seo-dashboard-button {
-                padding: 10px 16px;
-                font-size: 14px;
-            }
-            
-            .seo-notification {
-                right: 10px;
-                max-width: calc(100vw - 20px);
-            }
-        }
-    </style>
 </body>
 </html>
